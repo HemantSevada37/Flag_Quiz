@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flag Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="nav-bar">
+            <!-- <div> -->
+                <!-- <form>
+                    <div class="level-form">
+                        <input type="radio" name="level" checked>
+                        <label for="">Easy</label><br>
+                    </div>
+                    <div class="level-form">
+                        <input type="radio" name="level">
+                        <label for="">Medium</label><br>
+                    </div>
+                    <div class="level-form">
+                        <input type="radio" name="level">
+                        <label for="">Hard</label><br>
+                    </div>
+                </form> -->
+            <!-- </div> -->
+            <div id="new-flag" onclick="newq()">
+                New Flag
+            </div>
+            <div id="score-container">
+                <div class="score-item-1">Your score</div>
+                <div class="score-item-2">Correct : </div>
+                <div class="score-item-3" id="correct-score"></div>
+                <div class="score-item-2">Incorrect : </div>
+                <div class="score-item-3" id="incorrect-score"></div>
+            </div>
+        </div>
+        <img src="flags/2.png" alt="flag" id="image">
+        <form>
+            <div class="option-item">
+                <input type="radio" name="flag" id="opt1">
+                <label for="opt1" id="option1">America</label><br>
+            </div>
+            <div class="option-item">
+                <input type="radio" name="flag" id="opt2">
+                <label for="opt2" id="option2">India</label><br>
+            </div>
+            <div class="option-item">
+                <input type="radio" name="flag" id="opt3">
+                <label for="opt3" id="option3">America America</label><br>
+            </div>
+            <div class="option-item">
+                <input type="radio" name="flag" id="opt4">
+                <label for="opt4" id="option4">America america</label><br>
+            </div>
+            <!-- <input type="submit" value="Submit"> -->
+        </form>
+        <button id="submit-button" onclick="result()" disabled>Submit</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
