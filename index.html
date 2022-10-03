@@ -10,27 +10,8 @@
 <body>
     <div id="container">
         <div id="nav-bar">
-            <!-- <div> -->
-                <!-- <form>
-                    <div class="level-form">
-                        <input type="radio" name="level" checked>
-                        <label for="">Easy</label><br>
-                    </div>
-                    <div class="level-form">
-                        <input type="radio" name="level">
-                        <label for="">Medium</label><br>
-                    </div>
-                    <div class="level-form">
-                        <input type="radio" name="level">
-                        <label for="">Hard</label><br>
-                    </div>
-                </form> -->
-            <!-- </div> -->
-            <div id="new-flag" onclick="newq()">
-                New Flag
-            </div>
             <div id="score-container">
-                <div class="score-item-1">Your score</div>
+                <div class="score-item-1">Score Board</div>
                 <div class="score-item-2">Correct : </div>
                 <div class="score-item-3" id="correct-score"></div>
                 <div class="score-item-2">Incorrect : </div>
@@ -57,7 +38,8 @@
             </div>
             <!-- <input type="submit" value="Submit"> -->
         </form>
-        <button id="submit-button" onclick="result()" disabled>Submit</button>
+        <button id="submit-button" onclick="result()">Submit</button>
+        <button id="new-flag" onclick="newq()">New Flag</button>
     </div>
     <script src="script.js"></script>
 </body>

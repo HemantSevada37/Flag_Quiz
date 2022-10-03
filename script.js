@@ -8,6 +8,12 @@ let country = ["country", "India", "USA", "United Kingdom", "Australia",
 
 let correctScore =0;
 let incorrectScore = 0;
+// variables for 4 option containers
+let option1 = document.getElementById(`opt1`);
+let option2 = document.getElementById(`opt2`);
+let option3 = document.getElementById(`opt3`);
+let option4 = document.getElementById(`opt4`);
+
 function showScore(x){
     if(x) {
         correctScore++;
@@ -44,61 +50,57 @@ function newq(){
     document.getElementById('option4').innerHTML = `${country[options[3]]}`;
     answer = options.indexOf(answer) +1;
 
-    document.getElementById('submit-button').disabled = false;
-    document.getElementById(`opt1`).checked = false;
-    document.getElementById(`opt2`).checked = false;
-    document.getElementById(`opt3`).checked = false;
-    document.getElementById(`opt4`).checked = false;
+    option1.checked = false;
+    option2.checked = false;
+    option3.checked = false;
+    option4.checked = false;
 
-    document.getElementsByClassName("option-item")[0]
-    .style.backgroundColor = "#C5C5C5";
-    document.getElementsByClassName("option-item")[1]
-    .style.backgroundColor = "#C5C5C5";
-    document.getElementsByClassName("option-item")[2]
-    .style.backgroundColor = "#C5C5C5";
-    document.getElementsByClassName("option-item")[3]
-    .style.backgroundColor = "#C5C5C5";
+    option1.parentNode.classList.remove("op-red", "op-green");
+    option2.parentNode.classList.remove("op-red", "op-green");
+    option3.parentNode.classList.remove("op-red", "op-green");
+    option4.parentNode.classList.remove("op-red", "op-green");
+    option1.parentNode.classList.add("op-gray");
+    option2.parentNode.classList.add("op-gray");
+    option3.parentNode.classList.add("op-gray");
+    option4.parentNode.classList.add("op-gray");
+
+    document.getElementById("new-flag").style.display = "none";
+    document.getElementById("submit-button").style.display = "inline-block";
 }
 
 function result(){
     // document.getElementById(`new-flag`).style.color = "blue";
     
-    if(!(document.getElementById(`opt1`).checked || 
-        document.getElementById(`opt2`).checked || 
-        document.getElementById(`opt3`).checked || 
-        document.getElementById(`opt4`).checked)){
+    if(!(option1.checked || option2.checked || 
+        option3.checked || option4.checked)){
             alert("Please choose one option!");
             return;
     }
 
-    if(document.getElementById(`opt1`).checked){
-        document.getElementById(`opt1`).parentNode
-        .style.backgroundColor = "#fc3c3c";
+    if(option1.checked){
+        option1.parentNode.classList.add("op-red");
+        option1.parentNode.classList.remove("op-gray");
     }
-    if(document.getElementById(`opt2`).checked){
-        document.getElementById(`opt2`).parentNode
-        .style.backgroundColor = "#fc3c3c";
+    if(option2.checked){
+        option2.parentNode.classList.add("op-red");
+        option2.parentNode.classList.remove("op-gray");
     }
-    if(document.getElementById(`opt3`).checked){
-        document.getElementById(`opt3`).parentNode
-        .style.backgroundColor = "#fc3c3c";
+    if(option3.checked){
+        option3.parentNode.classList.add("op-red");
+        option3.parentNode.classList.remove("op-gray");
     }
-    if(document.getElementById(`opt4`).checked){
-        document.getElementById(`opt4`).parentNode
-        .style.backgroundColor = "#fc3c3c";
+    if(option4.checked){
+        option4.parentNode.classList.add("op-red");
+        option4.parentNode.classList.remove("op-gray");
     }
 
-    document.getElementById(`opt${answer}`).parentNode
-        .style.backgroundColor = "#61bd4f";
+    document.getElementById(`opt${answer}`).parentNode.classList.add("op-green");
+    document.getElementById(`opt${answer}`).parentNode.classList.remove("op-gray");
 
     showScore(document.getElementById(`opt${answer}`).checked);
 
-    document.getElementById('submit-button').disabled = true;
-    
-    document.getElementById(`opt1`).checked = false;
-    document.getElementById(`opt2`).checked = false;
-    document.getElementById(`opt3`).checked = false;
-    document.getElementById(`opt4`).checked = false;
+    document.getElementById("submit-button").style.display = "none";
+    document.getElementById("new-flag").style.display = "inline-block";
 }
 
 window.onload = newq();
