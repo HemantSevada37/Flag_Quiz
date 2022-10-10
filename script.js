@@ -13,12 +13,15 @@ let option1 = document.getElementById(`opt1`);
 let option2 = document.getElementById(`opt2`);
 let option3 = document.getElementById(`opt3`);
 let option4 = document.getElementById(`opt4`);
+let audio = document.querySelectorAll('audio');
 
 function showScore(x){
     if(x) {
         correctScore++;
+        audio[0].play();
     }else{
         incorrectScore++;
+        audio[1].play();
     }
     document.getElementById("correct-score").innerHTML = correctScore;
     document.getElementById("incorrect-score").innerHTML = incorrectScore;
@@ -31,6 +34,7 @@ function randomNum(){
 
 function newq(){
     // document.getElementById('new-flag').style.color = "red";
+    audio[2].play();
     let options = [];
     let optionTemp=0;
     while(options.length < 4){
