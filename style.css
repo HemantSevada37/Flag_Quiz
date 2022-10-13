@@ -27,6 +27,40 @@ body {
     border-bottom: 5px solid black;
 }
 
+/* style for level selection buttons */
+#level {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid gray;
+    background-color: #facf0f;
+    width: 200px;
+    font-size: large;
+    font-weight: 700;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    height: 100%;
+    margin: 0px;
+}
+#level > button{
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    
+    width: 200px;
+    font-size: larger;
+    font-weight: 700;
+    padding: 4.5px 0px;
+    border-radius: 8px;
+    /* border-bottom: 1px solid black; */
+}
+.bgColor {
+    background-color: #facf0f;
+}
+.selected {
+    background-color: #e0b701;
+    /* color: red; */
+}
+
 
 /* score showing area styles */
 #score-container {

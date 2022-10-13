@@ -1,10 +1,19 @@
 
 // document.getElementsById('nav-bar').style.color = "red";
 let answer = 0;
+let randomNumber = 25;
 let country = ["country", "India", "USA", "United Kingdom", "Australia", 
 "Canada", "Germany", "France", "Japan", "China", "Pakisthan", "South Africa",
  "South Korea", "Italy", "Israel", "Bangladesh", "Brazil", "Denmark", "Egypt",
-"Finland", "New Zealand", "Norway", "Spain", "Sri Lanka", "Switzerland", "UAE"];
+"Finland", "New Zealand", "Norway", "Spain", "Sri Lanka", "Switzerland", "UAE",
+"Afghanistan", "Belgium","Bhutan", "Greece", "HongKong", "Indonesia", "Iran",
+"Iraq", "Ireland", "Maldives", "Mexico", "Myanmar", "Poland", "Portugal",
+"Russia", "Saudi Arabia", "Singapore", "Taiwan", "Turkey", "Argentina", "Austria",
+"Chile", "Czech Republic", "Fiji", "Ghana", "Iceland", "Kuwait", 'Malaysia',
+"Mauritius", "Netherlands", "North Korea", "Oman", "Philippines", "Qatar",
+"Somalia", "Syria", "Sweden", "Thailand", "Ukraine", "Vatican City", "Vietnam"];
+// console.log(country.length);
+// console.log(country[65], country[25], country[50]);
 
 let correctScore =0;
 let incorrectScore = 0;
@@ -14,6 +23,30 @@ let option2 = document.getElementById(`opt2`);
 let option3 = document.getElementById(`opt3`);
 let option4 = document.getElementById(`opt4`);
 let audio = document.querySelectorAll('audio');
+let level_easy = document.getElementById('level').childNodes[1];
+let level_medium = document.getElementById('level').childNodes[4];
+let level_hard = document.getElementById('level').childNodes[7];
+
+function selectLevel(level){
+    if(level == "easy"){
+        // console.log("clicked");
+        // console.log(document.getElementById('level').childNodes);
+        level_easy.classList.add("selected");
+        level_medium.classList.remove("selected");
+        level_hard.classList.remove("selected");
+        randomNumber = 25;
+    }else if(level == "medium"){
+        level_easy.classList.remove("selected");
+        level_medium.classList.add("selected");
+        level_hard.classList.remove("selected");
+        randomNumber = 45;
+    }else if(level == "hard"){
+        level_easy.classList.remove("selected");
+        level_medium.classList.remove("selected");
+        level_hard.classList.add("selected");
+        randomNumber = 66;
+    }
+}
 
 function showScore(x){
     if(x) {
@@ -29,7 +62,7 @@ function showScore(x){
 // showScore(false);
 
 function randomNum(){
-    return Math.floor((Math.random() * 25) + 1);
+    return Math.floor((Math.random() * randomNumber) + 1);
 }
 
 function newq(){
@@ -108,3 +141,4 @@ function result(){
 }
 
 window.onload = newq();
+window.onload = selectLevel("easy");
